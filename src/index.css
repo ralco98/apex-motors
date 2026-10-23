@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: hsl(220, 14%, 8%);
+    --foreground: hsl(210, 16%, 95%);
+    --primary: hsl(206, 100%, 52%);
+    --primary-foreground: hsl(0, 0%, 100%);
+    --muted-foreground: hsl(215, 10%, 58%);
+    --border: hsl(220, 12%, 20%);
+    --card: hsl(220, 13%, 12%);
+    --card-elevated: hsl(220, 12%, 16%);
+    --success: hsl(152, 62%, 44%);
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    color: var(--primary);
+  }
+
+  .section-eyebrow {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    color: var(--primary);
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .blue-glow {
+    box-shadow: 0 0 30px -8px rgba(10, 144, 255, 0.5);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Radix slider styling */
+.apex-slider [data-radix-slider-track] {
+  height: 6px;
+  background: hsl(220, 12%, 20%);
+  border-radius: 9999px;
+  position: relative;
+}
+
+.apex-slider [data-radix-slider-range] {
+  position: absolute;
+  height: 100%;
+  background: var(--primary);
+  border-radius: 9999px;
+}
+
+.apex-slider [data-radix-slider-thumb] {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 9999px;
+  border: 3px solid var(--primary);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease;
+}
+
+.apex-slider [data-radix-slider-thumb]:hover {
+  transform: scale(1.15);
+}
+
+.apex-slider [data-radix-slider-thumb]:active {
+  transform: scale(1.25);
+}
+
+/* Hide scrollbar for filter chips on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
